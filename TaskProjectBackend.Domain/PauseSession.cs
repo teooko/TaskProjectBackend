@@ -2,5 +2,5 @@
 
 public class PauseSession : Session
 {
-    public int WorkSessionId { get; set; }
+    public virtual WorkSession? WorkSession { get; set; }
 }

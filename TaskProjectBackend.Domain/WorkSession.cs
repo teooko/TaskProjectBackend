@@ -2,5 +2,6 @@
 
 public class WorkSession : Session
 {
-    public int TaskId { get; set; }
+    public virtual Task? Task { get; set; }
+    public ICollection<PauseSession>? PauseSessions { get; set; }
 }
