@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskProjectBackend", "TaskP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskProjectBackend.Domain", "TaskProjectBackend.Domain\TaskProjectBackend.Domain.csproj", "{7B8AA0DD-A686-4B23-9B6A-910EF84DCBFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskProjectBackend.DataAccess", "TaskProjectBackend.DataAccess\TaskProjectBackend.DataAccess.csproj", "{03751283-26CE-488C-9C70-5171C4EBA4BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{7B8AA0DD-A686-4B23-9B6A-910EF84DCBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B8AA0DD-A686-4B23-9B6A-910EF84DCBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B8AA0DD-A686-4B23-9B6A-910EF84DCBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03751283-26CE-488C-9C70-5171C4EBA4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03751283-26CE-488C-9C70-5171C4EBA4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03751283-26CE-488C-9C70-5171C4EBA4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03751283-26CE-488C-9C70-5171C4EBA4BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
