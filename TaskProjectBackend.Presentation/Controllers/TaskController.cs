@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TaskProjectBackend.Application.Services;
 
 namespace TaskProjectBackend.Presentation.Controllers;
 
@@ -6,26 +7,26 @@ namespace TaskProjectBackend.Presentation.Controllers;
 [Route("api/v1/[controller]")]
 public class TaskController : Controller
 {
-
-    /*
-    private readonly GenreService _genreService = new GenreService();
+    
+    private readonly TaskService _taskService = new TaskService();
     
     [HttpPost]
-    public ActionResult<Task> Post([FromBody] DGenre genre)
+    public ActionResult<Domain.Task> Post([FromBody] Domain.Task task)
     {
+        /*
         DGenre postedGenre = _genreService.Post(genre);
         
         if(postedGenre == null)
             return this.BadRequest("Name required");
-            
-        return this.Ok(postedGenre);
+        */  
+        Console.WriteLine(task);
+        return this.Ok(/*_taskService.Post(task)*/);
     }
-    
+    /*
     [HttpGet]
-    public ActionResult<DGenre> Get()
+    public ActionResult<Domain.Task> Get()
     {
-        return this.Ok(_genreService.Get());
+        // return this.Ok(_taskService.Get());
     }
-    
     */
 }

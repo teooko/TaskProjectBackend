@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TaskProjectBackend.Presentation.props" />
+</Project>
