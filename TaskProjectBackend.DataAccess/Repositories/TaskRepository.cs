@@ -1,4 +1,6 @@
-﻿namespace TaskProjectBackend.DataAccess.Repositories;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+
+namespace TaskProjectBackend.DataAccess.Repositories;
 using Domain;
 
 public class TaskRepository
@@ -6,7 +8,7 @@ public class TaskRepository
     public Task Get(int id)
     {
         using var context = new Context();
-        return context.Tasks.Single(p => p.Id == id);
+        return context.tasks.Single(p => p.Id == id);
     }
 
     public Task Post(Task task)

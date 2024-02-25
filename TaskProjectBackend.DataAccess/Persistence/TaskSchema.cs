@@ -13,9 +13,9 @@ public class TaskSchema : IEntityTypeConfiguration<Task>
         builder.Property(p => p.Name).HasMaxLength(255);
         builder.Property(p => p.Color).HasColumnType("text");
 
-        builder.HasMany(p => p.Cast)
+        /*builder.HasMany(p => p.Cast)
             .WithOne(p => p.Movie)
             .HasForeignKey(c => c.MovieId);
-        
+        */
     }
 }

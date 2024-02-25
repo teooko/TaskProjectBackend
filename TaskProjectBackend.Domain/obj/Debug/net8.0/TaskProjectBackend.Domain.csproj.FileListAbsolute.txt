@@ -20,3 +20,25 @@ C:\Users\Teo\Desktop\Licenta-backend\TaskProjectBackend\TaskProjectBackend.Domai
 C:\Users\Teo\Desktop\Licenta-backend\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\refint\TaskProjectBackend.Domain.dll
 C:\Users\Teo\Desktop\Licenta-backend\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.pdb
 C:\Users\Teo\Desktop\Licenta-backend\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\ref\TaskProjectBackend.Domain.dll
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\bin\Debug\net8.0\appsettings.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\bin\Debug\net8.0\TaskProjectBackend.Domain.deps.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\bin\Debug\net8.0\TaskProjectBackend.Domain.dll
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\bin\Debug\net8.0\TaskProjectBackend.Domain.pdb
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.AssemblyInfoInputs.cache
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.AssemblyInfo.cs
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.sourcelink.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets\msbuild.TaskProjectBackend.Domain.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets\msbuild.build.TaskProjectBackend.Domain.props
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TaskProjectBackend.Domain.props
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TaskProjectBackend.Domain.props
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\scopedcss\bundle\TaskProjectBackend.Domain.styles.css
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.dll
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\refint\TaskProjectBackend.Domain.dll
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\TaskProjectBackend.Domain.pdb
+C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Domain\obj\Debug\net8.0\ref\TaskProjectBackend.Domain.dll

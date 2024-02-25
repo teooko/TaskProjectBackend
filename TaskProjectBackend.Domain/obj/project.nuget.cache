@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x/Kchg8FDKEjMok2v/XpZiBau9EB1v/LgkOaAvaRIZFlob9usWnZwrjSsFQXzu4PE2aI1HjVNqY1yBzzd9ERSg==",
+  "dgSpecHash": "IejhLQdCxt5DFPXxUG49z/G23XpM8yzY2cqVfziXqJBHMUOMezAHKKoLpqMGiaDnU7vloo3XLAudzSes4ddEaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Teo\\Desktop\\Licenta-backend\\TaskProjectBackend\\TaskProjectBackend.Domain\\TaskProjectBackend.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Domain\\TaskProjectBackend.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

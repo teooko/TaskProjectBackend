@@ -8,7 +8,7 @@ Console.WriteLine("Hello, World!");
 TaskService taskserv = new();
 
 var frompost = taskserv.Post(new Domain.Task() { Name = "task", Color = "blue" });
-var fromGet = taskserv.Get(1);
+Domain.Task fromGet = taskserv.Get(1);
 
 
 Console.WriteLine(fromGet);

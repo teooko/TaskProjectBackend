@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "vzkravotQ0sDmpmVErEzfsGjRHpzTMgLLudmo2VrNdM=",
+  "Hash": "xe1N+WTwtEYOpY+TpreaFPPvcGMb1+pvVmx9DokfLFE=",
   "Source": "TaskProjectBackend.Application",
   "BasePath": "_content/TaskProjectBackend.Application",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Teo\\Desktop\\Licenta-backend\\TaskProjectBackend\\TaskProjectBackend.DataAccess\\TaskProjectBackend.DataAccess.csproj",
+      "Identity": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.DataAccess\\TaskProjectBackend.DataAccess.csproj",
       "Version": 2,
       "Source": "TaskProjectBackend.DataAccess",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -18,7 +18,7 @@
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     },
     {
-      "Identity": "C:\\Users\\Teo\\Desktop\\Licenta-backend\\TaskProjectBackend\\TaskProjectBackend.Domain\\TaskProjectBackend.Domain.csproj",
+      "Identity": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Domain\\TaskProjectBackend.Domain.csproj",
       "Version": 2,
       "Source": "TaskProjectBackend.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
