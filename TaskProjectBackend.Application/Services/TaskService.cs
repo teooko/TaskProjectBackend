@@ -24,5 +24,9 @@ public class TaskService
     {
         return _taskRepository.Post(task);
     }
+    public Domain.Task Delete(int id)
+    {
+        return _taskRepository.Delete(id);
+    }
     
 }

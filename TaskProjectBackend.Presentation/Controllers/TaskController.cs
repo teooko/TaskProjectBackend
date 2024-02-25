@@ -12,7 +12,6 @@ public class TaskController : ControllerBase
     [HttpPost]
     public ActionResult<Domain.Task> Post([FromBody] Domain.Task task)
     {
-       
         return Ok(_taskService.Post(task));
     }
 
@@ -26,5 +25,11 @@ public class TaskController : ControllerBase
     public ActionResult<List<Domain.Task>> Get()
     {
         return Ok(_taskService.Get());
+    }
+
+    [HttpDelete]
+    public ActionResult<Domain.Task> Delete(int id)
+    {
+        return Ok(_taskService.Delete(id));
     }
 }

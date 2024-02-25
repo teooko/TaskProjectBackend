@@ -25,4 +25,13 @@ public class TaskRepository
         return this.Get(task.Id);
     }
 
+    public Task Delete(int id)
+    {
+        using var context = new Context();
+        var task = this.Get(id);
+        context.Remove(task);
+        context.SaveChanges();
+        return task;
+    }
+
 }
