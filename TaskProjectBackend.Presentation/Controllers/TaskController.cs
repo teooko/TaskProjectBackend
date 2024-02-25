@@ -21,4 +21,10 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.Get(id));
     }
+    
+    [HttpGet]
+    public ActionResult<List<Domain.Task>> Get()
+    {
+        return Ok(_taskService.Get());
+    }
 }

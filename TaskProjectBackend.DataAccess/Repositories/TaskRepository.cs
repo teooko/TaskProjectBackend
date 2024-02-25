@@ -11,6 +11,12 @@ public class TaskRepository
         return context.tasks.Single(p => p.Id == id);
     }
 
+    public List<Task> Get()
+    {
+        using var context = new Context();
+        return context.tasks.ToList();
+    }
+    
     public Task Post(Task task)
     {
         using var context = new Context();

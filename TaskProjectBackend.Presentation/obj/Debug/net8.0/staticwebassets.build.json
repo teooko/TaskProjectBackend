@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/HbItm4tjwjIPtxESZHE0tZzwADqZNno06TBc0MNWQs=",
+  "Hash": "e0VlNSK7hlh0b44t1ik1gKrfxqfoNMOMmWH/A9tBcwQ=",
   "Source": "TaskProjectBackend.Presentation",
   "BasePath": "_content/TaskProjectBackend.Presentation",
   "Mode": "Default",
@@ -12,10 +12,10 @@
       "Source": "TaskProjectBackend.Application",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
       "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
       "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     },
     {
       "Identity": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.DataAccess\\TaskProjectBackend.DataAccess.csproj",
