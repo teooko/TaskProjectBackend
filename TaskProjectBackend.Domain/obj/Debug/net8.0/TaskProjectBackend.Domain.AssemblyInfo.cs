@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskProjectBackend.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72f8347d8e3240b281f60389c93b539fdf2af566")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8d99cc730922ac2d5b6edbbe53a6aeb3c1f1708")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskProjectBackend.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskProjectBackend.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

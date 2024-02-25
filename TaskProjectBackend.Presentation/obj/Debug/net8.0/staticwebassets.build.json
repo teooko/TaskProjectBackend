@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "IN55TR87AgJlUb1ut6TPhn5+HIeAoBxFo0agE54w74Q=",
-  "Source": "API",
-  "BasePath": "_content/API",
+  "Hash": "/HbItm4tjwjIPtxESZHE0tZzwADqZNno06TBc0MNWQs=",
+  "Source": "TaskProjectBackend.Presentation",
+  "BasePath": "_content/TaskProjectBackend.Presentation",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
