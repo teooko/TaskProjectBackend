@@ -1,4 +1,5 @@
-﻿using TaskProjectBackend.DataAccess.Repositories;
+﻿using Domain;
+using TaskProjectBackend.DataAccess.Repositories;
 
 namespace TaskProjectBackend.Application.Services;
 
@@ -28,5 +29,17 @@ public class TaskService
     {
         return _taskRepository.Delete(id);
     }
-    
+
+    public TimeSpan? GetDuration(int id)
+    {
+        List<WorkSession> workSessions = _taskRepository.GetWorkSessions(id);
+
+        TimeSpan? duration = TimeSpan.Zero;
+        foreach (var workSession in workSessions)
+        {
+            duration += workSession.End - workSession.Start;
+        }
+
+        return duration;
+    }
 }

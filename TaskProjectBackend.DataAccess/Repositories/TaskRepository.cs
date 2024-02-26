@@ -34,4 +34,12 @@ public class TaskRepository
         return task;
     }
 
+    public List<WorkSession> GetWorkSessions(int id)
+    {
+        using var context = new Context();
+        List<WorkSession> workSessions = context.worksessions.Where(s => s.Task.Id == id).ToList();
+
+        return workSessions;
+    }
+
 }

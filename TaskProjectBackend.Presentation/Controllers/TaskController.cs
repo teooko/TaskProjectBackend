@@ -32,4 +32,10 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.Delete(id));
     }
+
+    [HttpGet("{id}/duration")]
+    public ActionResult<TimeSpan> GetDuration(int id)
+    {
+        return Ok(_taskService.GetDuration(id));
+    }
 }
