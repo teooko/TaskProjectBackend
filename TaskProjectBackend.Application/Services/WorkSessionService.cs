@@ -26,4 +26,13 @@ public class WorkSessionService
     {
         _workSessionRepository.Stop(id);
     }
+
+    public TimeSpan? GetDuration(int id)
+    {
+        WorkSession workSession = _workSessionRepository.Get(id);
+
+        TimeSpan? duration = workSession.End - workSession.Start;
+
+        return duration;
+    }
 }
