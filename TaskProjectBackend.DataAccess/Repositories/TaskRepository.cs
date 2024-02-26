@@ -30,6 +30,14 @@ public class TaskRepository
     {
         using var context = new Context();
         var task = this.Get(id);
+        
+        List<WorkSession> workSessions = this.GetWorkSessions(id);
+        foreach (var workSession in workSessions)
+        {
+            context.Remove(workSession);
+        }
+        context.SaveChanges();
+        
         context.Remove(task);
         context.SaveChanges();
         return task;
