@@ -17,13 +17,13 @@ public class WorkSessionService
         return _workSessionRepository.Get(id);
     }
 
-    public void Post(int id)
+    public void Start(int id)
     {
-        _workSessionRepository.Post(id);
+        _workSessionRepository.Start(id);
     }
 
-    public void Update(int id)
+    public void Stop(int id)
     {
-        _workSessionRepository.Update(id);
+        _workSessionRepository.Stop(id);
     }
 }

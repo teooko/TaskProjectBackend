@@ -9,7 +9,7 @@ public class WorkSessionRepository
         var context = new Context();
         return context.worksessions.Single(p => p.Id == id);
     }
-    public void Post(int id)
+    public void Start(int id)
     {
         var context = new Context();
         WorkSession workSession = new WorkSession();
@@ -26,7 +26,7 @@ public class WorkSessionRepository
         
     }
 
-    public void Update(int id)
+    public void Stop(int id)
     {
         var context = new Context();
         WorkSession workSession = context.worksessions.Single(s => s.Id == id);
