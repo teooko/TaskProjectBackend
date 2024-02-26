@@ -14,7 +14,7 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.Post(task));
     }
-
+/*
     [HttpGet("{id}")]
     public ActionResult<Domain.Task> Get(int id)
     {
@@ -26,7 +26,12 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.Get());
     }
-
+    */
+    [HttpGet("{date}")]
+    public ActionResult<List<Domain.Task>> GetTasksByDay(DateTime date)
+    {
+        return Ok(_taskService.GetTasksByDay(date));
+    }
     [HttpDelete]
     public ActionResult<Domain.Task> Delete(int id)
     {
@@ -38,4 +43,5 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.GetDuration(id));
     }
+    
 }

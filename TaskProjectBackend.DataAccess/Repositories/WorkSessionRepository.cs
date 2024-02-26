@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace TaskProjectBackend.DataAccess.Repositories;
 
@@ -36,5 +37,15 @@ public class WorkSessionRepository
 
         context.Update(workSession);
         context.SaveChanges();
+    }
+    public List<WorkSession> GetWorkSessionsByDay(DateTime date)
+    {
+        using var context = new Context();
+        List<WorkSession> workSessions = context.worksessions
+            .Include(s => s.Task)
+            .Where(s => s.End.Value.Date == date.Date)
+            .ToList();
+        
+        return workSessions;
     }
 }

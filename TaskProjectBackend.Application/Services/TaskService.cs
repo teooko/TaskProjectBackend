@@ -6,10 +6,11 @@ namespace TaskProjectBackend.Application.Services;
 public class TaskService
 {
     private readonly TaskRepository _taskRepository;
-
+    private readonly WorkSessionRepository _workSessionRepository;
     public TaskService()
     {
         _taskRepository = new TaskRepository();
+        _workSessionRepository = new WorkSessionRepository();
     }
     public List<Domain.Task> Get()
     {
@@ -41,5 +42,27 @@ public class TaskService
         }
 
         return duration;
+    }
+
+    public List<Domain.Task> GetTasksByDay(DateTime date)
+    {
+        List<Domain.Task> tasks = new List<Domain.Task>();
+        List<WorkSession> workSessions = _workSessionRepository.GetWorkSessionsByDay(date);
+        
+        foreach (var workSession in workSessions)
+        {
+            
+            if (!tasks.Any(t => t.Id == workSession.Task.Id))
+            {
+                Domain.Task task = new Domain.Task();
+                task.Id = workSession.Task.Id;
+                task.Color = workSession.Task.Color;
+                task.Name = workSession.Task.Name;
+                
+                tasks.Add(task);
+            }
+            
+        }
+        return tasks;
     }
 }
