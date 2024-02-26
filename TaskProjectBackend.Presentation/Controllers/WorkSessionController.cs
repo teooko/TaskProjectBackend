@@ -18,6 +18,14 @@ public class WorkSessionController : ControllerBase
     [HttpPost("{id}")]
     public ActionResult<string> Post(int id)
     {
+        _workSessionService.Post(id);
         return Ok("Work session started");
+    }
+
+    [HttpPatch("{id}")]
+    public ActionResult<string> Update(int id)
+    {
+        _workSessionService.Update(id);
+        return Ok("Work session stopped");
     }
 }

@@ -21,4 +21,9 @@ public class WorkSessionService
     {
         _workSessionRepository.Post(id);
     }
+
+    public void Update(int id)
+    {
+        _workSessionRepository.Update(id);
+    }
 }

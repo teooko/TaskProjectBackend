@@ -25,4 +25,16 @@ public class WorkSessionRepository
         context.SaveChanges();
         
     }
+
+    public void Update(int id)
+    {
+        var context = new Context();
+        WorkSession workSession = context.worksessions.Single(s => s.Id == id);
+
+        DateTime currentTimeStamp = DateTime.Now;
+        workSession.End = currentTimeStamp;
+
+        context.Update(workSession);
+        context.SaveChanges();
+    }
 }
