@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Sp1lmtSTUwglyHySEsysOtnd3Y/BP2Lulv5CpB/X3g8=",
+  "Hash": "15+JNyKzeH7Hb9xcQGywE5kfS06ViWkAOkLH8wrtiZI=",
   "Source": "TaskProjectBackend.DataAccess",
   "BasePath": "_content/TaskProjectBackend.DataAccess",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Domain\\TaskProjectBackend.Domain.csproj",
+      "Identity": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Domain\\TaskProjectBackend.Domain.csproj",
       "Version": 2,
       "Source": "TaskProjectBackend.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

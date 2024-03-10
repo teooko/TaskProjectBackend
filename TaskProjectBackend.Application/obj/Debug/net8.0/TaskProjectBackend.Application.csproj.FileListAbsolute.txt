@@ -87,3 +87,31 @@ C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Appl
 C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\refint\TaskProjectBackend.Application.dll
 C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.pdb
 C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\ref\TaskProjectBackend.Application.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\appsettings.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.Application.deps.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.Application.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.Application.pdb
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.DataAccess.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.Domain.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.DataAccess.pdb
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.Domain.pdb
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.csproj.AssemblyReference.cache
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.AssemblyInfoInputs.cache
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.AssemblyInfo.cs
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.csproj.CoreCompileInputs.cache
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.sourcelink.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets\msbuild.TaskProjectBackend.Application.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets\msbuild.build.TaskProjectBackend.Application.props
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TaskProjectBackend.Application.props
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TaskProjectBackend.Application.props
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\scopedcss\bundle\TaskProjectBackend.Application.styles.css
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.csproj.CopyComplete
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\refint\TaskProjectBackend.Application.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.pdb
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\ref\TaskProjectBackend.Application.dll
