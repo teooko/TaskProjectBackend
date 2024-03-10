@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RIMKS22kEmyUi2i0uHx28nZJ7oSUYgEy/Tt1LAeu9bZ1saYQbZJvB5WBLtvi0/EwnViwtSipzv1+nivV7qNfuw==",
+  "dgSpecHash": "egCqYSn54Iw8csNNF/6/BxWTvIzy8l5/8A7KxeQvjQHnA+dk46h+NHufBz2Y6PLuLc1Qj3agFZJNkx0UbRIEkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj",
+  "projectFilePath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Teo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

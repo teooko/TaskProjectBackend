@@ -4072,11 +4072,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Presentation\\TaskProjectBackend.Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Presentation\\TaskProjectBackend.Presentation.csproj",
       "projectName": "TaskProjectBackend.Presentation",
-      "projectPath": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Presentation\\TaskProjectBackend.Presentation.csproj",
+      "projectPath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Presentation\\TaskProjectBackend.Presentation.csproj",
       "packagesPath": "C:\\Users\\Teo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Presentation\\obj\\",
+      "outputPath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4097,8 +4097,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj": {
-              "projectPath": "C:\\Users\\Teo\\Desktop\\Licenta Backend2\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj"
+            "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj": {
+              "projectPath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj"
             }
           }
         }
