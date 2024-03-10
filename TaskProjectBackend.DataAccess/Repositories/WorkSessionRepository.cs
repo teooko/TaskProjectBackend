@@ -10,7 +10,7 @@ public class WorkSessionRepository
         var context = new Context();
         return context.worksessions.Single(p => p.Id == id);
     }
-    public void Start(int id)
+    public WorkSession Start(int id)
     {
         var context = new Context();
         WorkSession workSession = new WorkSession();
@@ -25,6 +25,7 @@ public class WorkSessionRepository
         context.Add(workSession);
         context.SaveChanges();
         
+        return context.worksessions.Single(ws => ws.Start == currentTimeStamp);
     }
 
     public void Stop(int id)

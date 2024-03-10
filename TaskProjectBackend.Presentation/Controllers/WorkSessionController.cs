@@ -16,10 +16,10 @@ public class WorkSessionController : ControllerBase
     }
     
     [HttpPost("{id}")]
-    public ActionResult<string> StartWorkingSession(int id)
+    public ActionResult<WorkSession> StartWorkingSession(int id)
     {
-        _workSessionService.Start(id);
-        return Ok("Work session started");
+        WorkSession workSession = _workSessionService.Start(id);
+        return Ok(workSession);
     }
 
     [HttpPatch("{id}")]

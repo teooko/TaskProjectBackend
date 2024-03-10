@@ -17,9 +17,9 @@ public class WorkSessionService
         return _workSessionRepository.Get(id);
     }
 
-    public void Start(int id)
+    public WorkSession Start(int id)
     {
-        _workSessionRepository.Start(id);
+        return _workSessionRepository.Start(id);
     }
 
     public void Stop(int id)
