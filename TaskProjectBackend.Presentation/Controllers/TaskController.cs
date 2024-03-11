@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TaskProjectBackend.Application.DTO;
 using TaskProjectBackend.Application.Services;
 
 namespace API.Controllers;
@@ -27,7 +28,7 @@ public class TaskController : ControllerBase
     }
     
     [HttpGet("date/{date}")]
-    public ActionResult<List<Domain.Task>> GetTasksByDay(DateTime date)
+    public ActionResult<List<TaskDTO>> GetTasksByDay(DateTime date)
     {
         return Ok(_taskService.GetTasksByDay(date));
     }

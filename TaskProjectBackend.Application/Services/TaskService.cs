@@ -1,4 +1,5 @@
 ﻿using Domain;
+using TaskProjectBackend.Application.DTO;
 using TaskProjectBackend.DataAccess.Repositories;
 
 namespace TaskProjectBackend.Application.Services;
@@ -44,9 +45,9 @@ public class TaskService
         return duration;
     }
 
-    public List<Domain.Task> GetTasksByDay(DateTime date)
+    public List<TaskDTO> GetTasksByDay(DateTime date)
     {
-        List<Domain.Task> tasks = new List<Domain.Task>();
+        List<TaskDTO> tasks = new List<TaskDTO>();
         List<WorkSession> workSessions = _workSessionRepository.GetWorkSessionsByDay(date);
         
         foreach (var workSession in workSessions)
@@ -54,11 +55,11 @@ public class TaskService
             
             if (!tasks.Any(t => t.Id == workSession.Task.Id))
             {
-                Domain.Task task = new Domain.Task();
+                TaskDTO task = new TaskDTO();
                 task.Id = workSession.Task.Id;
                 task.Color = workSession.Task.Color;
                 task.Name = workSession.Task.Name;
-                
+                task.Time += workSession.End - workSession.Start;
                 tasks.Add(task);
             }
             
