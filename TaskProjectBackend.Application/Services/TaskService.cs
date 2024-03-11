@@ -49,20 +49,23 @@ public class TaskService
     {
         List<TaskDTO> tasks = new List<TaskDTO>();
         List<WorkSession> workSessions = _workSessionRepository.GetWorkSessionsByDay(date);
-        
+    
         foreach (var workSession in workSessions)
         {
-            
-            if (!tasks.Any(t => t.Id == workSession.Task.Id))
+            var existingTask = tasks.FirstOrDefault(t => t.Id == workSession.Task.Id);
+            if (existingTask != null)
+            {
+                existingTask.Time += workSession.End - workSession.Start;
+            }
+            else
             {
                 TaskDTO task = new TaskDTO();
                 task.Id = workSession.Task.Id;
                 task.Color = workSession.Task.Color;
                 task.Name = workSession.Task.Name;
-                task.Time += workSession.End - workSession.Start;
+                task.Time = workSession.End - workSession.Start;
                 tasks.Add(task);
             }
-            
         }
         return tasks;
     }
