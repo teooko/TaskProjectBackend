@@ -69,4 +69,34 @@ public class TaskService
         }
         return tasks;
     }
+
+    public List<WeeklyTasksDTO> GetWeeklyTasks(int fromDate)
+    {
+        
+        List<WorkSession> workSessions = _taskRepository.GetWeeklyWorkSessions(fromDate);
+        List<WeeklyTasksDTO> weeklyTasks = new List<WeeklyTasksDTO>();
+
+        WeeklyTasksDTO weeklyTask = new WeeklyTasksDTO();
+        weeklyTask.Day = workSessions[0].End.Value.Date;
+        foreach (var workSession in workSessions)
+        {
+            if (workSession.End.Value.Date != weeklyTask.Day)
+            {   weeklyTasks.Add(weeklyTask);
+                weeklyTask.Day = workSession.End.Value.Date;
+                weeklyTask.Colors.Add(workSession.Task.Color);
+            }
+            else
+            {
+                string existingTask = weeklyTask.Colors.FirstOrDefault(t => t == workSession.Task.Color);
+                if (existingTask == null)
+                {
+                    weeklyTask.Colors.Add(workSession.Task.Color);
+                }
+            }
+        }
+        if(weeklyTask != null)
+            weeklyTasks.Add(weeklyTask);
+        
+        return weeklyTasks;
+    }
 }

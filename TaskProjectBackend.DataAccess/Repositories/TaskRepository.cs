@@ -50,5 +50,22 @@ public class TaskRepository
 
         return workSessions;
     }
+
+    public List<WorkSession> GetWeeklyWorkSessions(int fromDate)
+    {
+        using var context = new Context();
+        List<WorkSession> workSessions = new List<WorkSession>();
+        for (int i = fromDate; i < fromDate + 7; i++)
+        {
+            DateTime dateTime = DateTime.Today.AddDays(-i);
+            List<WorkSession> newWorkSessions = context.worksessions
+                .Where(e => e.End.Value.Date == dateTime.Date)
+                .Include(e => e.Task)
+                .ToList();
+            workSessions.AddRange(newWorkSessions);
+        }
+
+        return workSessions;
+    }
     
 }

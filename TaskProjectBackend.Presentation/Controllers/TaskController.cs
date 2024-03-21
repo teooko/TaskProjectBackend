@@ -43,5 +43,9 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.GetDuration(id));
     }
-    
+    [HttpGet("weekly/{fromDate}")]
+    public ActionResult<List<WeeklyTasksDTO>> GetWeeklyTasks(int fromDate)
+    {
+        return Ok(_taskService.GetWeeklyTasks(fromDate));
+    }
 }
