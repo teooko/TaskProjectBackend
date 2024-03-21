@@ -82,13 +82,14 @@ public class TaskService
         {
             if (workSession.End.Value.Date != weeklyTask.Day)
             {   weeklyTasks.Add(weeklyTask);
+                weeklyTask = new WeeklyTasksDTO();
                 weeklyTask.Day = workSession.End.Value.Date;
                 weeklyTask.Colors.Add(workSession.Task.Color);
             }
             else
             {
-                string existingTask = weeklyTask.Colors.FirstOrDefault(t => t == workSession.Task.Color);
-                if (existingTask == null)
+                string existingColor = weeklyTask.Colors.FirstOrDefault(t => t == workSession.Task.Color);
+                if (existingColor == null)
                 {
                     weeklyTask.Colors.Add(workSession.Task.Color);
                 }
