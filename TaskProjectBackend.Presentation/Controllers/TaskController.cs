@@ -48,4 +48,9 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.GetWeeklyTasks(fromDate));
     }
+    [HttpGet("monthly")]
+    public ActionResult<List<MonthlyTasksDTO>> GetMonthlyTasks()
+    {
+        return Ok(_taskService.GetMontlyTasks());
+    }
 }

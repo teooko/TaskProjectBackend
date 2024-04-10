@@ -68,4 +68,34 @@ public class TaskRepository
         return workSessions;
     }
     
+    public List<WorkSession> GetMonthlyWorkSessions(int monthsAgo)
+    {
+        using var context = new Context();
+        
+            List<WorkSession> workSessions = new List<WorkSession>();
+            DateTime endDate = DateTime.Today; // Current date
+            DateTime startDate = endDate.AddMonths(-monthsAgo).AddDays(-endDate.Day + 1); // Start date 6 months ago
+
+            // Loop through each month within the specified range
+            while (startDate <= endDate)
+            {
+                DateTime nextMonthStartDate = startDate.AddMonths(1); // Start of next month
+
+                // Fetch work sessions within the current month
+                List<WorkSession> newWorkSessions = context.worksessions
+                    .Where(e => e.End.HasValue && e.End.Value.Date >= startDate && e.End.Value.Date < nextMonthStartDate)
+                    .Include(e => e.Task)
+                    .ToList();
+
+                workSessions.AddRange(newWorkSessions);
+
+                // Move to the start of the next month
+                startDate = nextMonthStartDate;
+            }
+
+            return workSessions;
+        
+    }
+
+    
 }

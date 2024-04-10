@@ -100,4 +100,30 @@ public class TaskService
         
         return weeklyTasks;
     }
+
+    public List<MonthlyTasksDTO> GetMontlyTasks()
+    {
+        List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(6);
+        List<MonthlyTasksDTO> monthlyTasksDtos = new List<MonthlyTasksDTO>();
+        MonthlyTasksDTO monthlyTasksDto = new MonthlyTasksDTO();
+        Console.WriteLine(workSessions.Count + "AAAAAAAAAAAAAAAAAAAAICIEAAAAAAAAAAAAAAAAAAAAAAaa");
+        monthlyTasksDto.MonthNumber = workSessions[0].End.Value.Month;
+
+        foreach (var workSession in workSessions)
+        {
+            if (workSession.End.Value.Month != monthlyTasksDto.MonthNumber)
+            {
+                monthlyTasksDtos.Add(monthlyTasksDto);
+                monthlyTasksDto = new MonthlyTasksDTO();
+                monthlyTasksDto.MonthNumber = workSession.End.Value.Month;
+                
+            }
+            monthlyTasksDto.Time += (workSession.End - workSession.Start);
+        }
+        if (monthlyTasksDto != null)
+            monthlyTasksDtos.Add(monthlyTasksDto);
+        
+
+        return monthlyTasksDtos;
+    }
 }
