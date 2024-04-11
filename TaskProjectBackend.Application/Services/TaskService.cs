@@ -136,6 +136,7 @@ public class TaskService
             .Select(group => new
             {
                 TaskId = group.Key,
+                TaskName = group.First().Task.Name,
                 TotalTime = group.Sum(ws => (ws.End.Value - ws.Start).TotalMinutes)
             });
         
@@ -146,7 +147,8 @@ public class TaskService
             TotalTasksTimeDTO totalTasksTimeDto = new TotalTasksTimeDTO
             {
                 Id = taskTimeGroup.TaskId,
-                Time = TimeSpan.FromMinutes(taskTimeGroup.TotalTime) 
+                Name = taskTimeGroup.TaskName,
+                Time = TimeSpan.FromMinutes(taskTimeGroup.TotalTime)
             };
 
             totalTasksTimeDtos.Add(totalTasksTimeDto);
