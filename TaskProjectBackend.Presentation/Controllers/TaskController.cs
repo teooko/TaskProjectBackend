@@ -53,4 +53,10 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.GetMontlyTasks());
     }
+    
+    [HttpGet("total")]
+    public ActionResult<List<MonthlyTasksDTO>> GetTotalTasksTime()
+    {
+        return Ok(_taskService.GetTotalTasksTime());
+    }
 }

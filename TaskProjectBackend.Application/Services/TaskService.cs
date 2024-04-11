@@ -106,7 +106,7 @@ public class TaskService
         List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(6);
         List<MonthlyTasksDTO> monthlyTasksDtos = new List<MonthlyTasksDTO>();
         MonthlyTasksDTO monthlyTasksDto = new MonthlyTasksDTO();
-        Console.WriteLine(workSessions.Count + "AAAAAAAAAAAAAAAAAAAAICIEAAAAAAAAAAAAAAAAAAAAAAaa");
+        
         monthlyTasksDto.MonthNumber = workSessions[0].End.Value.Month;
 
         foreach (var workSession in workSessions)
@@ -125,5 +125,33 @@ public class TaskService
         
 
         return monthlyTasksDtos;
+    }
+    
+    public List<TotalTasksTimeDTO> GetTotalTasksTime()
+    {
+        List<WorkSession> workSessions = _workSessionRepository.GetAllWorkSessions();
+        
+        var taskTimeGroups = workSessions
+            .GroupBy(ws => ws.Task.Id) 
+            .Select(group => new
+            {
+                TaskId = group.Key,
+                TotalTime = group.Sum(ws => (ws.End.Value - ws.Start).TotalMinutes)
+            });
+        
+        List<TotalTasksTimeDTO> totalTasksTimeDtos = new List<TotalTasksTimeDTO>();
+        
+        foreach (var taskTimeGroup in taskTimeGroups)
+        {
+            TotalTasksTimeDTO totalTasksTimeDto = new TotalTasksTimeDTO
+            {
+                Id = taskTimeGroup.TaskId,
+                Time = TimeSpan.FromMinutes(taskTimeGroup.TotalTime) 
+            };
+
+            totalTasksTimeDtos.Add(totalTasksTimeDto);
+        }
+
+        return totalTasksTimeDtos;
     }
 }

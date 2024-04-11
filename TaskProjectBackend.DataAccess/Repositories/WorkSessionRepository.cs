@@ -49,4 +49,13 @@ public class WorkSessionRepository
         
         return workSessions;
     }
+    
+    public List<WorkSession> GetAllWorkSessions()
+    {
+        using var context = new Context();
+        List<WorkSession> workSessions = context.worksessions.Include(s => s.Task)
+            .ToList();
+        
+        return workSessions;
+    }
 }
