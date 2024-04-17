@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "15+JNyKzeH7Hb9xcQGywE5kfS06ViWkAOkLH8wrtiZI=",
+  "Hash": "QVd4WJMEeHdEvSbAFW0J6NpGdPElRqGFBnyS1UDaPFI=",
   "Source": "TaskProjectBackend.DataAccess",
   "BasePath": "_content/TaskProjectBackend.DataAccess",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "TaskProjectBackend.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],
