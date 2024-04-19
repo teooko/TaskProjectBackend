@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using TaskProjectBackend.Application.Services;
 using TaskProjectBackend.DataAccess;
+using TaskProjectBackend.DataAccess.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +34,11 @@ builder.Services.AddDbContext<Context>(options =>
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
     .AddEntityFrameworkStores<Context>();
+
+builder.Services.AddScoped<WorkSessionRepository>();
+builder.Services.AddScoped<TaskRepository>(); 
+builder.Services.AddScoped<TaskService>();
+builder.Services.AddScoped<WorkSessionService>();
 
 var app = builder.Build();
 
