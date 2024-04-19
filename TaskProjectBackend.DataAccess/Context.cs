@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace TaskProjectBackend.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
-public class Context : IdentityDbContext<IdentityUser>
+public class Context : IdentityDbContext
 {
-    public Context(DbContextOptions options) : base(options)
+    public Context(DbContextOptions<Context> options) : base(options)
     {
     }
     public DbSet<Domain.Task> tasks { get; set; }

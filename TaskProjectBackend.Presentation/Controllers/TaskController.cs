@@ -8,8 +8,11 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class TaskController : ControllerBase
 {
-    private readonly TaskService _taskService = new TaskService();
-    
+    private readonly TaskService _taskService;
+    public TaskController(TaskService taskService)
+    {
+        _taskService = taskService;
+    }
     [HttpPost]
     public ActionResult<Domain.Task> Post([FromBody] Domain.Task task)
     {

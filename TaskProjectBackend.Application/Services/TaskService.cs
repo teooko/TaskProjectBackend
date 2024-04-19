@@ -8,10 +8,10 @@ public class TaskService
 {
     private readonly TaskRepository _taskRepository;
     private readonly WorkSessionRepository _workSessionRepository;
-    public TaskService()
+    public TaskService(TaskRepository taskRepository, WorkSessionRepository workSessionRepository)
     {
-        _taskRepository = new TaskRepository();
-        _workSessionRepository = new WorkSessionRepository();
+        _taskRepository = taskRepository;
+        _workSessionRepository = workSessionRepository;
     }
     public List<Domain.Task> Get()
     {

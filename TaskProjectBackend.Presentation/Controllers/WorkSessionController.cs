@@ -7,7 +7,12 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class WorkSessionController : ControllerBase
 {
-    private readonly WorkSessionService _workSessionService = new WorkSessionService();
+    private readonly WorkSessionService _workSessionService;
+
+    public WorkSessionController(WorkSessionService workSessionService)
+    {
+        _workSessionService = workSessionService;
+    }
     
     [HttpGet("{id}")]
     public ActionResult<WorkSession> GetDuration(int id)

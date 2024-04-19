@@ -7,9 +7,9 @@ public class WorkSessionService
 {
     private readonly WorkSessionRepository _workSessionRepository;
 
-    public WorkSessionService()
+    public WorkSessionService(WorkSessionRepository workSessionRepository)
     {
-        _workSessionRepository = new WorkSessionRepository();
+        _workSessionRepository = workSessionRepository;
     }
 
     public WorkSession Get(int id)
