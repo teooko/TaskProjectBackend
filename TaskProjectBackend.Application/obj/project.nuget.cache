@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E3JpOvCfwN6wgWI0MwlWpOTU0I/N/y+N3n7mXwemCS6qKL38Gu+bg3GE4i/SaMCzfrTy9EY8gyULgPRay7m56A==",
+  "dgSpecHash": "qZrqNtxOuor3M5GyAzUGmD8EcvS37xRXKyxr5c1L2W93VkPrxAacG0oj85WtrcUgmZI/dqiM6Tl5yAK/LA+JnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Application\\TaskProjectBackend.Application.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,8 @@
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\mysql.data\\8.3.0\\mysql.data.8.3.0.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\mysql.entityframeworkcore\\8.0.0\\mysql.entityframeworkcore.8.0.0.nupkg.sha512",
+    "C:\\Users\\Teo\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\Teo\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.2\\pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",

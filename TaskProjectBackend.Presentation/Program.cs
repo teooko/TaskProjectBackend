@@ -25,11 +25,7 @@ builder.Services.AddDbContext<Context>(options =>
     string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     
     // Use SQL Server provider with the specified connection string
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
-        mySqlOptionsAction: sqlOptions =>
-        {
-            sqlOptions.MigrationsAssembly("TaskProjectBackend.DataAccess");
-        }).LogTo(Console.WriteLine);;
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)).LogTo(Console.WriteLine);;
 });
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Iu+WcWiiofggt4pxhv1IspY/bICeBfhBjbU1busIg5zhcPYNBwwQ90h/L1ToFFEiJtYuR9fXYIyygf3YJKnyuQ==",
+  "dgSpecHash": "ClpksxeJgWNfjE2kwpq3BnTSTAXHHeN7R1p32Jkt9oKSPz9sqlIbqQVpqZrNH6MX4bnZBoUag5+OAwMxtn6Nyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.DataAccess\\TaskProjectBackend.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,8 @@
     "C:\\Users\\Teo\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\mysql.data\\8.3.0\\mysql.data.8.3.0.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\mysql.entityframeworkcore\\8.0.0\\mysql.entityframeworkcore.8.0.0.nupkg.sha512",
+    "C:\\Users\\Teo\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\Teo\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.2\\pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

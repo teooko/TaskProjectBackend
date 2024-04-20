@@ -2009,6 +2009,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.2",
           "MySql.EntityFrameworkCore": "8.0.0",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.2",
           "TaskProjectBackend.Domain": "1.0.0"
         },
         "compile": {
