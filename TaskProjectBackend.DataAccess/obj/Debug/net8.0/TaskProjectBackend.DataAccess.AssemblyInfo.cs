@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskProjectBackend.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c549fe360b3bac51264d7d67df23acc8824673a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+355eb3dcf327b7a1c5ff636eed6ac17168650ac7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskProjectBackend.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskProjectBackend.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
