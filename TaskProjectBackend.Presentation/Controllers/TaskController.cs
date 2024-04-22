@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskProjectBackend.Application.DTO;
 using TaskProjectBackend.Application.Services;
@@ -13,9 +15,11 @@ public class TaskController : ControllerBase
     {
         _taskService = taskService;
     }
-    [HttpPost]
+    [HttpPost, Authorize]
     public ActionResult<Domain.Task> Post([FromBody] Domain.Task task)
     {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        task.UserId = userId;
         return Ok(_taskService.Post(task));
     }
     [HttpGet("{id}")]
@@ -24,10 +28,11 @@ public class TaskController : ControllerBase
         return Ok(_taskService.Get(id));
     }
     
-    [HttpGet]
+    [HttpGet, Authorize]
     public ActionResult<List<Domain.Task>> Get()
     {
-        return Ok(_taskService.Get());
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        return Ok(_taskService.Get(userId));
     }
     
     [HttpGet("date/{date}")]
@@ -49,17 +54,20 @@ public class TaskController : ControllerBase
     [HttpGet("weekly/{fromDate}")]
     public ActionResult<List<WeeklyTasksDTO>> GetWeeklyTasks(int fromDate)
     {
-        return Ok(_taskService.GetWeeklyTasks(fromDate));
+        string userId = HttpContext.Request.Headers["userId"];
+        return Ok(_taskService.GetWeeklyTasks(userId, fromDate));
     }
     [HttpGet("monthly")]
     public ActionResult<List<MonthlyTasksDTO>> GetMonthlyTasks()
     {
-        return Ok(_taskService.GetMontlyTasks());
+        string userId = HttpContext.Request.Headers["userId"];
+        return Ok(_taskService.GetMontlyTasks(userId));
     }
     
     [HttpGet("total")]
     public ActionResult<List<MonthlyTasksDTO>> GetTotalTasksTime()
     {
-        return Ok(_taskService.GetTotalTasksTime());
+        string userId = HttpContext.Request.Headers["userId"];
+        return Ok(_taskService.GetTotalTasksTime(userId));
     }
 }

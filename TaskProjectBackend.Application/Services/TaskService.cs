@@ -13,9 +13,9 @@ public class TaskService
         _taskRepository = taskRepository;
         _workSessionRepository = workSessionRepository;
     }
-    public List<Domain.Task> Get()
+    public List<Domain.Task> Get(string userId)
     {
-        var tasks = _taskRepository.Get();
+        var tasks = _taskRepository.Get(userId);
         return tasks;
     }
     public Domain.Task Get(int id)
@@ -70,10 +70,10 @@ public class TaskService
         return tasks;
     }
 
-    public List<WeeklyTasksDTO> GetWeeklyTasks(int fromDate)
+    public List<WeeklyTasksDTO> GetWeeklyTasks(string userId, int fromDate)
     {
         
-        List<WorkSession> workSessions = _taskRepository.GetWeeklyWorkSessions(fromDate);
+        List<WorkSession> workSessions = _taskRepository.GetWeeklyWorkSessions(userId, fromDate);
         List<WeeklyTasksDTO> weeklyTasks = new List<WeeklyTasksDTO>();
 
         WeeklyTasksDTO weeklyTask = new WeeklyTasksDTO();
@@ -101,9 +101,9 @@ public class TaskService
         return weeklyTasks;
     }
 
-    public List<MonthlyTasksDTO> GetMontlyTasks()
+    public List<MonthlyTasksDTO> GetMontlyTasks(string userId)
     {
-        List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(6);
+        List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(userId, 6);
         List<MonthlyTasksDTO> monthlyTasksDtos = new List<MonthlyTasksDTO>();
         MonthlyTasksDTO monthlyTasksDto = new MonthlyTasksDTO();
         
@@ -127,9 +127,11 @@ public class TaskService
         return monthlyTasksDtos;
     }
     
-    public List<TotalTasksTimeDTO> GetTotalTasksTime()
+    public List<TotalTasksTimeDTO> GetTotalTasksTime(string userId)
     {
-        List<WorkSession> workSessions = _workSessionRepository.GetAllWorkSessions();
+        List<WorkSession> workSessions = _workSessionRepository.GetAllWorkSessions()
+            .Where(ws => ws.Task.UserId == userId)
+            .ToList();
         
         var taskTimeGroups = workSessions
             .GroupBy(ws => ws.Task.Id) 

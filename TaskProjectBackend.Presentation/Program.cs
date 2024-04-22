@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 using TaskProjectBackend.Application.Services;
 using TaskProjectBackend.DataAccess;
 using TaskProjectBackend.DataAccess.Repositories;
@@ -16,7 +17,17 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+    
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
 
 // Configure DbContext with SQL Server using connection string from appsettings.json
 builder.Services.AddDbContext<Context>(options =>

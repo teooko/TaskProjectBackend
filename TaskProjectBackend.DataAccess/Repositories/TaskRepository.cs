@@ -18,15 +18,14 @@ public class TaskRepository
         return _context.tasks.Single(p => p.Id == id);
     }
 
-    public List<Task> Get()
+    public List<Task> Get(string userId)
     {
         //using var context = new Context();
-        return _context.tasks.ToList();
+        return _context.tasks.Where(t => t.UserId == userId).ToList();
     }
     
     public Task Post(Task task)
     {
-        //using var context = new Context();
         _context.Add(task);
         _context.SaveChanges();
         return this.Get(task.Id);
@@ -57,15 +56,14 @@ public class TaskRepository
         return workSessions;
     }
 
-    public List<WorkSession> GetWeeklyWorkSessions(int fromDate)
+    public List<WorkSession> GetWeeklyWorkSessions(string userId, int fromDate)
     {
-        //using var context = new Context();
         List<WorkSession> workSessions = new List<WorkSession>();
         for (int i = fromDate; i < fromDate + 7; i++)
         {
             DateTime dateTime = DateTime.Today.AddDays(-i);
             List<WorkSession> newWorkSessions = _context.worksessions
-                .Where(e => e.End.Value.Date == dateTime.Date)
+                .Where(e => e.End.Value.Date == dateTime.Date && e.Task.UserId == userId)
                 .Include(e => e.Task)
                 .ToList();
             workSessions.AddRange(newWorkSessions);
@@ -74,7 +72,7 @@ public class TaskRepository
         return workSessions;
     }
     
-    public List<WorkSession> GetMonthlyWorkSessions(int monthsAgo)
+    public List<WorkSession> GetMonthlyWorkSessions(string userId, int monthsAgo)
     {
         //using var context = new Context();
         
@@ -89,7 +87,7 @@ public class TaskRepository
 
                 // Fetch work sessions within the current month
                 List<WorkSession> newWorkSessions = _context.worksessions
-                    .Where(e => e.End.HasValue && e.End.Value.Date >= startDate && e.End.Value.Date < nextMonthStartDate)
+                    .Where(e => e.End.HasValue && e.End.Value.Date >= startDate && e.End.Value.Date < nextMonthStartDate && e.Task.UserId == userId)
                     .Include(e => e.Task)
                     .ToList();
 

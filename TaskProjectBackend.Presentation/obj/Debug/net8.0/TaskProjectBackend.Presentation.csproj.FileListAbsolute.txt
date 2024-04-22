@@ -255,3 +255,6 @@ C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presen
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presentation\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presentation\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presentation\bin\Debug\net8.0\Scrutor.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Presentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

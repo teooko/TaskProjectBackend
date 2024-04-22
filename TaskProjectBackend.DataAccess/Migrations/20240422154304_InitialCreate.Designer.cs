@@ -12,8 +12,8 @@ using TaskProjectBackend.DataAccess;
 namespace TaskProjectBackend.DataAccess.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240420170951_AddTaskUser")]
-    partial class AddTaskUser
+    [Migration("20240422154304_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
