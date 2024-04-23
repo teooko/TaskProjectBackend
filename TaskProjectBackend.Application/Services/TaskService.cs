@@ -45,10 +45,10 @@ public class TaskService
         return duration;
     }
 
-    public List<TaskDTO> GetTasksByDay(DateTime date)
+    public List<TaskDTO> GetTasksByDay(string userId, DateTime date)
     {
         List<TaskDTO> tasks = new List<TaskDTO>();
-        List<WorkSession> workSessions = _workSessionRepository.GetWorkSessionsByDay(date);
+        List<WorkSession> workSessions = _workSessionRepository.GetWorkSessionsByDay(userId, date);
     
         foreach (var workSession in workSessions)
         {

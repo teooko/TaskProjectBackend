@@ -45,12 +45,12 @@ public class WorkSessionRepository
         _context.Update(workSession);
         _context.SaveChanges();
     }
-    public List<WorkSession> GetWorkSessionsByDay(DateTime date)
+    public List<WorkSession> GetWorkSessionsByDay(string userId, DateTime date)
     {
         //using var context = new Context();
         List<WorkSession> workSessions = _context.worksessions
             .Include(s => s.Task)
-            .Where(s => s.End.Value.Date == date.Date)
+            .Where(s => s.End.Value.Date == date.Date  && s.Task.UserId == userId)
             .ToList();
         
         return workSessions;

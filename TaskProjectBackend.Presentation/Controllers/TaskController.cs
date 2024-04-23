@@ -35,10 +35,11 @@ public class TaskController : ControllerBase
         return Ok(_taskService.Get(userId));
     }
     
-    [HttpGet("date/{date}")]
+    [HttpGet("date/{date}"), Authorize]
     public ActionResult<List<TaskDTO>> GetTasksByDay(DateTime date)
     {
-        return Ok(_taskService.GetTasksByDay(date));
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        return Ok(_taskService.GetTasksByDay(userId, date));
     }
     [HttpDelete]
     public ActionResult<Domain.Task> Delete(int id)
