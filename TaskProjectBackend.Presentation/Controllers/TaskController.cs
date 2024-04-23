@@ -51,10 +51,10 @@ public class TaskController : ControllerBase
     {
         return Ok(_taskService.GetDuration(id));
     }
-    [HttpGet("weekly/{fromDate}")]
+    [HttpGet("weekly/{fromDate}"), Authorize]
     public ActionResult<List<WeeklyTasksDTO>> GetWeeklyTasks(int fromDate)
     {
-        string userId = HttpContext.Request.Headers["userId"];
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         return Ok(_taskService.GetWeeklyTasks(userId, fromDate));
     }
     [HttpGet("monthly")]

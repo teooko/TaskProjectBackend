@@ -75,9 +75,12 @@ public class TaskService
         
         List<WorkSession> workSessions = _taskRepository.GetWeeklyWorkSessions(userId, fromDate);
         List<WeeklyTasksDTO> weeklyTasks = new List<WeeklyTasksDTO>();
-
         WeeklyTasksDTO weeklyTask = new WeeklyTasksDTO();
+        if (workSessions.Count == 0)
+            return new List<WeeklyTasksDTO>(0);
+        
         weeklyTask.Day = workSessions[0].End.Value.Date;
+
         foreach (var workSession in workSessions)
         {
             if (workSession.End.Value.Date != weeklyTask.Day)
