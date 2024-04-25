@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace TaskProjectBackend.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
-public class Context : IdentityDbContext
+public class Context : IdentityDbContext<ApplicationUser>
 {
     public Context(DbContextOptions<Context> options) : base(options)
     {
