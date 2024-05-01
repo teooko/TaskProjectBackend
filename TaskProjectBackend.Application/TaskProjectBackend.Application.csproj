@@ -11,4 +11,8 @@
       <ProjectReference Include="..\TaskProjectBackend.DataAccess\TaskProjectBackend.DataAccess.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Fleck" Version="1.2.0" />
+    </ItemGroup>
+
 </Project>

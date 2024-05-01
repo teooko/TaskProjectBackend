@@ -56,6 +56,7 @@ C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.Data
 C:\Users\Teo\Desktop\Licenta Backend2\TaskProjectBackend\TaskProjectBackend.DataAccess\obj\Debug\net8.0\ref\TaskProjectBackend.DataAccess.dll
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.DataAccess\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.DataAccess\bin\Debug\net8.0\appsettings.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.DataAccess\bin\Debug\net8.0\TaskProjectBackend.DataAccess.staticwebassets.runtime.json
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.DataAccess\bin\Debug\net8.0\TaskProjectBackend.DataAccess.deps.json
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.DataAccess\bin\Debug\net8.0\TaskProjectBackend.DataAccess.runtimeconfig.json
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.DataAccess\bin\Debug\net8.0\TaskProjectBackend.DataAccess.dll

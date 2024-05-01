@@ -15,6 +15,7 @@ public class Context : IdentityDbContext<ApplicationUser>
     public DbSet<WorkSession> worksessions { get; set; }
 
     public DbSet<PauseSession> pausesessions { get; set; }
+    public DbSet<GroupSession> groupsessions { get; set; }
     /*
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -29,6 +30,7 @@ public class Context : IdentityDbContext<ApplicationUser>
             modelBuilder.Entity<Domain.Task>().ToTable("tasks");
             modelBuilder.Entity<WorkSession>().ToTable("worksessions");
             modelBuilder.Entity<PauseSession>().ToTable("pausesessions");
+            modelBuilder.Entity<GroupSession>().ToTable("groupsessions");
         }
     
 }

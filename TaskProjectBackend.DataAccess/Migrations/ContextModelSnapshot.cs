@@ -89,6 +89,54 @@ namespace TaskProjectBackend.DataAccess.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.GroupSession", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("User1Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("User2Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("User3Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("User4Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId2")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId3")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId4")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("User1Id");
+
+                    b.HasIndex("User2Id");
+
+                    b.HasIndex("User3Id");
+
+                    b.HasIndex("User4Id");
+
+                    b.ToTable("groupsessions", (string)null);
+                });
+
             modelBuilder.Entity("Domain.PauseSession", b =>
                 {
                     b.Property<int>("Id")
@@ -293,6 +341,33 @@ namespace TaskProjectBackend.DataAccess.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.GroupSession", b =>
+                {
+                    b.HasOne("Domain.ApplicationUser", "User1")
+                        .WithMany()
+                        .HasForeignKey("User1Id");
+
+                    b.HasOne("Domain.ApplicationUser", "User2")
+                        .WithMany()
+                        .HasForeignKey("User2Id");
+
+                    b.HasOne("Domain.ApplicationUser", "User3")
+                        .WithMany()
+                        .HasForeignKey("User3Id");
+
+                    b.HasOne("Domain.ApplicationUser", "User4")
+                        .WithMany()
+                        .HasForeignKey("User4Id");
+
+                    b.Navigation("User1");
+
+                    b.Navigation("User2");
+
+                    b.Navigation("User3");
+
+                    b.Navigation("User4");
                 });
 
             modelBuilder.Entity("Domain.PauseSession", b =>
