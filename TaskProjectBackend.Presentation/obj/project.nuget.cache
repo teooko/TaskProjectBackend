@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JiDM6qun3qMFwnO8xJIjrUmdTUjAx+GG0dTdQWQTv32sDdKcLTqQVtq+rWiU0Ooe3iNir9xkPrmV9BgucEvbFA==",
+  "dgSpecHash": "ycS49CEEzKreN9hzQ4YfeUaRyDezpESWPZQ9s/hmQ9et1SzWqKLHJiCs/Dxplvsi6LXbRRSbBDsdlW4y27VmJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Teo\\Desktop\\LicentaBackend\\TaskProjectBackend\\TaskProjectBackend.Presentation\\TaskProjectBackend.Presentation.csproj",
   "expectedPackageFiles": [
@@ -92,6 +92,7 @@
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.2\\microsoft.entityframeworkcore.design.8.0.2.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.2\\microsoft.entityframeworkcore.relational.8.0.2.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.2\\microsoft.entityframeworkcore.sqlserver.8.0.2.nupkg.sha512",
+    "C:\\Users\\Teo\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.2\\microsoft.entityframeworkcore.tools.8.0.2.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Teo\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",

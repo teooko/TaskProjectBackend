@@ -39,6 +39,7 @@ builder.Services.AddDbContext<Context>(options =>
     // Use SQL Server provider with the specified connection string
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
     options.User.RequireUniqueEmail = true;
@@ -48,8 +49,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<ApplicationUser>()
-    .AddEntityFrameworkStores<Context>()
-    .AddDefaultTokenProviders();
+    .AddEntityFrameworkStores<Context>();
 
 builder.Services.AddScoped<WorkSessionRepository>();
 builder.Services.AddScoped<TaskRepository>(); 

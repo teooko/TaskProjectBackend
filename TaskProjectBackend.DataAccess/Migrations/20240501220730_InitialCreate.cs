@@ -35,10 +35,12 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "AspNetUsers",
+                name: "aspnetusers",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProfilePicturePath = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -65,7 +67,7 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                    table.PrimaryKey("PK_aspnetusers", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -111,9 +113,9 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
+                        name: "FK_AspNetUserClaims_aspnetusers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "aspnetusers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -136,9 +138,9 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
                     table.ForeignKey(
-                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
+                        name: "FK_AspNetUserLogins_aspnetusers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "aspnetusers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -163,9 +165,9 @@ namespace TaskProjectBackend.DataAccess.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        name: "FK_AspNetUserRoles_aspnetusers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "aspnetusers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -188,11 +190,61 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
                     table.ForeignKey(
-                        name: "FK_AspNetUserTokens_AspNetUsers_UserId",
+                        name: "FK_AspNetUserTokens_aspnetusers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        principalTable: "aspnetusers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "groupsessions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Active = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    UserId1 = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    User1Id = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserId2 = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    User2Id = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserId3 = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    User3Id = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserId4 = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    User4Id = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_groupsessions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_groupsessions_aspnetusers_User1Id",
+                        column: x => x.User1Id,
+                        principalTable: "aspnetusers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_groupsessions_aspnetusers_User2Id",
+                        column: x => x.User2Id,
+                        principalTable: "aspnetusers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_groupsessions_aspnetusers_User3Id",
+                        column: x => x.User3Id,
+                        principalTable: "aspnetusers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_groupsessions_aspnetusers_User4Id",
+                        column: x => x.User4Id,
+                        principalTable: "aspnetusers",
+                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -206,18 +258,17 @@ namespace TaskProjectBackend.DataAccess.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Color = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tasks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_tasks_AspNetUsers_UserId",
+                        name: "FK_tasks_aspnetusers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "aspnetusers",
+                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -291,14 +342,34 @@ namespace TaskProjectBackend.DataAccess.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
-                table: "AspNetUsers",
+                table: "aspnetusers",
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
-                table: "AspNetUsers",
+                table: "aspnetusers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_groupsessions_User1Id",
+                table: "groupsessions",
+                column: "User1Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_groupsessions_User2Id",
+                table: "groupsessions",
+                column: "User2Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_groupsessions_User3Id",
+                table: "groupsessions",
+                column: "User3Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_groupsessions_User4Id",
+                table: "groupsessions",
+                column: "User4Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_pausesessions_WorkSessionId",
@@ -335,6 +406,9 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "groupsessions");
+
+            migrationBuilder.DropTable(
                 name: "pausesessions");
 
             migrationBuilder.DropTable(
@@ -347,7 +421,7 @@ namespace TaskProjectBackend.DataAccess.Migrations
                 name: "tasks");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "aspnetusers");
         }
     }
 }

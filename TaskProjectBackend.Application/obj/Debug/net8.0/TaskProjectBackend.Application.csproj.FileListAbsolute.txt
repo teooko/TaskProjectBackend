@@ -116,3 +116,5 @@ C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Applic
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\refint\TaskProjectBackend.Application.dll
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.pdb
 C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\ref\TaskProjectBackend.Application.dll
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\bin\Debug\net8.0\TaskProjectBackend.Application.runtimeconfig.json
+C:\Users\Teo\Desktop\LicentaBackend\TaskProjectBackend\TaskProjectBackend.Application\obj\Debug\net8.0\TaskProjectBackend.Application.genruntimeconfig.cache

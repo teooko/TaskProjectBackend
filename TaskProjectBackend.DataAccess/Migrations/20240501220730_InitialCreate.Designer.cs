@@ -12,8 +12,8 @@ using TaskProjectBackend.DataAccess;
 namespace TaskProjectBackend.DataAccess.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240427125154_AddActiveBool")]
-    partial class AddActiveBool
+    [Migration("20240501220730_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,7 +89,7 @@ namespace TaskProjectBackend.DataAccess.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("aspnetusers", (string)null);
                 });
 
             modelBuilder.Entity("Domain.GroupSession", b =>

@@ -13,6 +13,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.2",
           "Microsoft.EntityFrameworkCore.Design": "8.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.2",
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
           "MySql.EntityFrameworkCore": "8.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.2",
@@ -1292,6 +1293,11 @@
             "assemblyVersion": "8.0.2.0",
             "fileVersion": "8.0.224.6803"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/8.0.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "8.0.2"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
@@ -2753,6 +2759,13 @@
       "sha512": "sha512-tAS5mYr/mwCXZVC5dyJlzdKHK0MLU0TAxNcc30xi7XLju8DE3S0Y206Yfi/MyuzLjulQRq9n2vjieeCxOnQfkg==",
       "path": "microsoft.entityframeworkcore.sqlserver/8.0.2",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.8.0.2.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/8.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PWy3X3Z1fnWlbU6pQMSnBvMwqERoKsriJ688TMl1xT2NyqcSk6/dX22eI5eV+qYXYmYna72Dq2u0P8tNZ6AYtg==",
+      "path": "microsoft.entityframeworkcore.tools/8.0.2",
+      "hashPath": "microsoft.entityframeworkcore.tools.8.0.2.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "type": "package",

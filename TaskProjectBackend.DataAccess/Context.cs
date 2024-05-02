@@ -27,6 +27,7 @@ public class Context : IdentityDbContext<ApplicationUser>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>().ToTable("aspnetusers");
             modelBuilder.Entity<Domain.Task>().ToTable("tasks");
             modelBuilder.Entity<WorkSession>().ToTable("worksessions");
             modelBuilder.Entity<PauseSession>().ToTable("pausesessions");
