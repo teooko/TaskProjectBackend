@@ -23,7 +23,7 @@ public class GroupSessionController : ControllerBase
     {
         string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         GroupSession groupSession = _groupSessionService.Post(userId);
-        _webSocketService.StartWebSocketServer("ws://192.168.100.8:8080");
+        _webSocketService.StartWebSocketServer("ws://192.168.1.103:8080");
         return Ok(groupSession);
     }
     

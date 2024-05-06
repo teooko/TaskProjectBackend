@@ -1,39 +1,37 @@
-﻿using Domain;
+﻿using System.Security.Claims;
+using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using TaskProjectBackend.Application.DTO;
 
 namespace API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
-public class AccountController : ControllerBase
+[Route("[controller]")]
+public class AccountController : Controller
 {
     private readonly UserManager<ApplicationUser> _userManager;
-
+    
     public AccountController(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;
     }
-
-    [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] ApplicationUser model)
+    [HttpPost, Authorize]
+    
+    [HttpPost, Authorize]
+    public async Task<ActionResult<UserExtraDataDTO>> Post([FromBody] UserExtraDataDTO userExtraDataDto)
     {
-        var user = new ApplicationUser
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
         {
-            UserName = model.UserName,
-            Email = model.Email,
-            // Set other properties
-        };
-
-        var result = await _userManager.CreateAsync(user);
-
-        if (result.Succeeded)
-        {
-            // Your registration success logic
-            return Ok(new { Message = "Registration successful" });
+            return NotFound();
         }
+        
+        await _userManager.AddClaimAsync(user, new Claim("Username", userExtraDataDto.Username));
+        await _userManager.AddClaimAsync(user, new Claim("ProfileImageUrl", userExtraDataDto.ProfilePicturePath));
 
-        // If registration fails, return errors
-        return BadRequest(new { Errors = result.Errors });
+        // Return successful response
+        return Ok(userExtraDataDto);
     }
 }
