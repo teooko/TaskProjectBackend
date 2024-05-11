@@ -31,7 +31,7 @@ public class AccountController : Controller
         if(!string.IsNullOrEmpty(userExtraDataDto.ProfilePicturePath))
         {
             await _userManager.AddClaimAsync(user, new Claim("ProfilePicturePath", userExtraDataDto.ProfilePicturePath));
-            await _userManager.AddClaimAsync(user, new Claim("ProfilePictureBase64", userExtraDataDto.ProfilePicturePath));
+            await _userManager.AddClaimAsync(user, new Claim("ProfilePictureBase64", userExtraDataDto.ProfilePictureBase64));
         }
         var result = await _userManager.GetClaimsAsync(user);
         
