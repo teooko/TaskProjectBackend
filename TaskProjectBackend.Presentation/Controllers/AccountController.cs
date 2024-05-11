@@ -17,21 +17,38 @@ public class AccountController : Controller
     {
         _userManager = userManager;
     }
-    [HttpPost, Authorize]
     
     [HttpPost, Authorize]
-    public async Task<ActionResult<UserExtraDataDTO>> Post([FromBody] UserExtraDataDTO userExtraDataDto)
+    public async Task<ActionResult<string>> Post([FromBody] UserExtraDataDTO userExtraDataDto)
     {
         var user = await _userManager.GetUserAsync(User);
         if (user == null)
         {
             return NotFound();
         }
-        
         await _userManager.AddClaimAsync(user, new Claim("Username", userExtraDataDto.Username));
-        await _userManager.AddClaimAsync(user, new Claim("ProfileImageUrl", userExtraDataDto.ProfilePicturePath));
+        
+        if(!string.IsNullOrEmpty(userExtraDataDto.ProfilePicturePath))
+        {
+            await _userManager.AddClaimAsync(user, new Claim("ProfilePicturePath", userExtraDataDto.ProfilePicturePath));
+            await _userManager.AddClaimAsync(user, new Claim("ProfilePictureBase64", userExtraDataDto.ProfilePicturePath));
+        }
+        var result = await _userManager.GetClaimsAsync(user);
+        
+        return Ok(result);
+    }
+    
+    [HttpGet, Authorize]
+    public async Task<ActionResult<string>> Get()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return NotFound();
+        }
 
-        // Return successful response
-        return Ok(userExtraDataDto);
+        var result = await _userManager.GetClaimsAsync(user);
+        
+        return Ok(result);
     }
 }

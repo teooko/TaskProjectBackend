@@ -17,7 +17,7 @@ public class WebSocketController : ControllerBase
     [HttpPost("start")]
     public IActionResult StartWebSocketServer()
     {
-        _webSocketService.StartWebSocketServer("ws://192.168.1.103:8080");
+        _webSocketService.StartWebSocketServer("ws://192.168.100.8:8080");
         return Ok();
     }
     
