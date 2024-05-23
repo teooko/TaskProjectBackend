@@ -1,5 +1,7 @@
-﻿using System.Security.Claims;
+﻿using System.Net.WebSockets;
+using System.Security.Claims;
 using Domain;
+using Fleck;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskProjectBackend.Application.Services;
@@ -21,9 +23,9 @@ public class GroupSessionController : ControllerBase
     [HttpPost, Authorize]
     public ActionResult<GroupSession> Post()
     {
+        
         string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         GroupSession groupSession = _groupSessionService.Post(userId);
-        _webSocketService.StartWebSocketServer("ws://192.168.100.8:8080");
         return Ok(groupSession);
     }
     
