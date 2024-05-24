@@ -51,4 +51,19 @@ public class AccountController : Controller
         
         return Ok(result);
     }
+    
+    [HttpGet("{userId}"), Authorize]
+    public async Task<ActionResult<string>> Get(string userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        var result = await _userManager.GetClaimsAsync(user);
+        
+        return Ok(result);
+    }
+    
 }
