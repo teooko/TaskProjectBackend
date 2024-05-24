@@ -36,10 +36,18 @@ public class GroupSessionController : ControllerBase
         return groupSession;
     }
     
+    [HttpGet("{groupSessionId}")]
+    public ActionResult<GroupSession> Get(int groupSessionId)
+    {
+        GroupSession groupSession = _groupSessionService.Get(groupSessionId);
+        return groupSession;
+    }
+    
     [HttpPatch("{groupSessionId}/Join"), Authorize]
     public ActionResult<GroupSession> Join(int groupSessionId)
     {
         string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        Console.WriteLine(userId + " USER IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
         GroupSession groupSession = _groupSessionService.Join(groupSessionId, userId);
         return groupSession;
     }

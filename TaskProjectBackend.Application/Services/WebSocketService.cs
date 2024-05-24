@@ -27,7 +27,6 @@ public class WebSocketService
         var connections = Rooms[roomId];
         foreach (var connection in connections)
         {
-            Console.WriteLine(connections.Count + " ATATEA IS");
             connection.Send(message);
         }
     }
@@ -59,16 +58,25 @@ public class WebSocketService
             {
                 Console.WriteLine($"Received message: {message}");
                 int roomId = ExtractRoomIdFromUrl(socket.ConnectionInfo.Path);
-                Console.WriteLine(roomId + " ROOOOOOOOOOOOOOOOOOOOOOOOOOOOM IDDDDDDDDDDDDDDDDDDDDD");
+                
                 if(roomId > -1)
                 {
-                    if(message == "connected") 
+                    if(message == "connected")
+                    {
                         AddConnectionToRoom(roomId, socket);
+                        BroadcastToRoom(roomId, message);
+                    }
                     else if(Rooms[roomId].Contains(socket))
                         BroadcastToRoom(roomId, message);
                 }
                 else
-                    Broadcast(message);
+                    foreach (var client in _clients)
+                    {
+                        if (client != socket) // Exclude the sender
+                        {
+                            client.Send(message);
+                        }
+                    }
             };
         });
     }

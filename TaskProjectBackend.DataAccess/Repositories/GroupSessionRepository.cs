@@ -19,6 +19,12 @@ public class GroupSessionRepository
         return groupSession;
     }
 
+    public GroupSession Get(int groupSessionId)
+    {
+        GroupSession groupSession = _context.groupsessions.FirstOrDefault(gs => gs.Id == groupSessionId);
+        return groupSession;
+    }
+    
     public GroupSession Patch(int groupSessionId)
     {
         GroupSession groupSession = _context.groupsessions.Single(g => g.Id == groupSessionId);

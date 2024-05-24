@@ -17,7 +17,11 @@ public class GroupSessionService
         GroupSession groupSession = _groupSessionRepository.Post(userId);
         return groupSession;
     }
-
+    public GroupSession Get(int groupSessionId)
+    {
+        GroupSession groupSession = _groupSessionRepository.Get(groupSessionId);
+        return groupSession;
+    }
     public GroupSession Patch(int groupSessionId)
     {
         GroupSession groupSession = _groupSessionRepository.Patch(groupSessionId);
