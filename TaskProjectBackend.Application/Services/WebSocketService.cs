@@ -22,12 +22,15 @@ public class WebSocketService
         return -1;
     }
     
-    public void BroadcastToRoom(int roomId, string message)
+    public void BroadcastToRoom(int roomId, string message, IWebSocketConnection sender)
     {
         var connections = Rooms[roomId];
         foreach (var connection in connections)
         {
-            connection.Send(message);
+            if (connection != sender) // Exclude the sender
+            {
+                connection.Send(message);
+            }
         }
     }
     
@@ -64,10 +67,10 @@ public class WebSocketService
                     if(message == "connected")
                     {
                         AddConnectionToRoom(roomId, socket);
-                        BroadcastToRoom(roomId, message);
+                        BroadcastToRoom(roomId, message, socket);
                     }
                     else if(Rooms[roomId].Contains(socket))
-                        BroadcastToRoom(roomId, message);
+                        BroadcastToRoom(roomId, message, socket);
                 }
                 else
                     foreach (var client in _clients)
