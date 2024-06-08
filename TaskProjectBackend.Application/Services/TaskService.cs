@@ -109,9 +109,9 @@ public class TaskService
         List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(userId, 6);
         List<MonthlyTasksDTO> monthlyTasksDtos = new List<MonthlyTasksDTO>();
         MonthlyTasksDTO monthlyTasksDto = new MonthlyTasksDTO();
-        
+        Console.WriteLine(workSessions.Count + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICIAAAAAAAAAAAAAAAAAA");
         monthlyTasksDto.MonthNumber = workSessions[0].End.Value.Month;
-
+        
         foreach (var workSession in workSessions)
         {
             if (workSession.End.Value.Month != monthlyTasksDto.MonthNumber)

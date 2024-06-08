@@ -58,17 +58,17 @@ public class TaskController : ControllerBase
         string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         return Ok(_taskService.GetWeeklyTasks(userId, fromDate));
     }
-    [HttpGet("monthly")]
+    [HttpGet("monthly"), Authorize]
     public ActionResult<List<MonthlyTasksDTO>> GetMonthlyTasks()
     {
-        string userId = HttpContext.Request.Headers["userId"];
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         return Ok(_taskService.GetMontlyTasks(userId));
     }
     
-    [HttpGet("total")]
+    [HttpGet("total"), Authorize]
     public ActionResult<List<MonthlyTasksDTO>> GetTotalTasksTime()
     {
-        string userId = HttpContext.Request.Headers["userId"];
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         return Ok(_taskService.GetTotalTasksTime(userId));
     }
 }

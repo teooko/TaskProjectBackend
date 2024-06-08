@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace TaskProjectBackend.DataAccess.Repositories;
@@ -79,25 +80,17 @@ public class TaskRepository
             List<WorkSession> workSessions = new List<WorkSession>();
             DateTime endDate = DateTime.Today; // Current date
             DateTime startDate = endDate.AddMonths(-monthsAgo).AddDays(-endDate.Day + 1); // Start date 6 months ago
-
-            // Loop through each month within the specified range
-            while (startDate <= endDate)
-            {
-                DateTime nextMonthStartDate = startDate.AddMonths(1); // Start of next month
-
+            
                 // Fetch work sessions within the current month
                 List<WorkSession> newWorkSessions = _context.worksessions
-                    .Where(e => e.End.HasValue && e.End.Value.Date >= startDate && e.End.Value.Date < nextMonthStartDate && e.Task.UserId == userId)
+                    .Where(e => e.End.HasValue && e.End.Value.Date >= startDate && e.Task.UserId == userId)
                     .Include(e => e.Task)
                     .ToList();
+                Console.WriteLine(newWorkSessions.Count() + "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz");
 
-                workSessions.AddRange(newWorkSessions);
 
-                // Move to the start of the next month
-                startDate = nextMonthStartDate;
-            }
 
-            return workSessions;
+                return newWorkSessions;
         
     }
 
