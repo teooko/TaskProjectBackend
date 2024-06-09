@@ -86,10 +86,7 @@ public class TaskRepository
                     .Where(e => e.End.HasValue && e.End.Value.Date >= startDate && e.Task.UserId == userId)
                     .Include(e => e.Task)
                     .ToList();
-                Console.WriteLine(newWorkSessions.Count() + "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz");
-
-
-
+                
                 return newWorkSessions;
         
     }

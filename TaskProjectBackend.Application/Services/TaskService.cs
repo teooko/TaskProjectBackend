@@ -109,7 +109,6 @@ public class TaskService
         List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(userId, 6);
         List<MonthlyTasksDTO> monthlyTasksDtos = new List<MonthlyTasksDTO>();
         MonthlyTasksDTO monthlyTasksDto = new MonthlyTasksDTO();
-        Console.WriteLine(workSessions.Count + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICIAAAAAAAAAAAAAAAAAA");
         monthlyTasksDto.MonthNumber = workSessions[0].End.Value.Month;
         
         foreach (var workSession in workSessions)
@@ -132,33 +131,15 @@ public class TaskService
     
     public List<TotalTasksTimeDTO> GetTotalTasksTime(string userId)
     {
-        List<WorkSession> workSessions = _workSessionRepository.GetAllWorkSessions()
+        return _workSessionRepository.GetAllWorkSessions()
             .Where(ws => ws.Task.UserId == userId)
+            .GroupBy(ws => new { ws.Task.Id, ws.Task.Name })
+            .Select(group => new TotalTasksTimeDTO
+            {
+                Id = group.Key.Id,
+                Name = group.Key.Name,
+                Time = TimeSpan.FromMinutes(group.Sum(ws => (ws.End.Value - ws.Start).TotalMinutes))
+            })
             .ToList();
-        
-        var taskTimeGroups = workSessions
-            .GroupBy(ws => ws.Task.Id) 
-            .Select(group => new
-            {
-                TaskId = group.Key,
-                TaskName = group.First().Task.Name,
-                TotalTime = group.Sum(ws => (ws.End.Value - ws.Start).TotalMinutes)
-            });
-        
-        List<TotalTasksTimeDTO> totalTasksTimeDtos = new List<TotalTasksTimeDTO>();
-        
-        foreach (var taskTimeGroup in taskTimeGroups)
-        {
-            TotalTasksTimeDTO totalTasksTimeDto = new TotalTasksTimeDTO
-            {
-                Id = taskTimeGroup.TaskId,
-                Name = taskTimeGroup.TaskName,
-                Time = TimeSpan.FromMinutes(taskTimeGroup.TotalTime)
-            };
-
-            totalTasksTimeDtos.Add(totalTasksTimeDto);
-        }
-
-        return totalTasksTimeDtos;
     }
 }

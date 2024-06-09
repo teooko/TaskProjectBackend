@@ -47,7 +47,6 @@ public class WorkSessionRepository
     }
     public List<WorkSession> GetWorkSessionsByDay(string userId, DateTime date)
     {
-        //using var context = new Context();
         List<WorkSession> workSessions = _context.worksessions
             .Include(s => s.Task)
             .Where(s => s.End.Value.Date == date.Date  && s.Task.UserId == userId)
@@ -58,7 +57,6 @@ public class WorkSessionRepository
     
     public List<WorkSession> GetAllWorkSessions()
     {
-        //using var context = new Context();
         List<WorkSession> workSessions = _context.worksessions.Include(s => s.Task)
             .ToList();
         
