@@ -72,7 +72,22 @@ public class TaskRepository
 
         return workSessions;
     }
-    
+
+    public List<WorkSession> GetWorkSessionsPastYear(string userId)
+    {
+        DateTime endDate = DateTime.Today;
+        DateTime startDate = endDate.AddYears(-1);
+
+        List<WorkSession> workSessions = _context.worksessions
+            .Where(e => e.End.HasValue
+                        && e.End.Value.Date >= startDate.Date
+                        && e.End.Value.Date <= endDate.Date
+                        && e.Task.UserId == userId)
+            .Include(e => e.Task)
+            .ToList();
+
+        return workSessions;
+    }
     public List<WorkSession> GetMonthlyWorkSessions(string userId, int monthsAgo)
     {
         //using var context = new Context();

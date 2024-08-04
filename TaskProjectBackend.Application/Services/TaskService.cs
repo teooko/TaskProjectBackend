@@ -103,7 +103,32 @@ public class TaskService
         
         return weeklyTasks;
     }
+    
+    public Dictionary<DateTime, HashSet<string>> GetPastYearTasks(string userId)
+    {
+        List<WorkSession> workSessions = _taskRepository.GetWorkSessionsPastYear(userId);
 
+        var dailyTasks = new Dictionary<DateTime, HashSet<string>>();
+
+        if (!workSessions.Any())
+            return dailyTasks;
+
+        foreach (var workSession in workSessions)
+        {
+            DateTime sessionDate = workSession.End.Value.Date;
+            string color = workSession.Task.Color;
+
+            if (!dailyTasks.ContainsKey(sessionDate))
+            {
+                dailyTasks[sessionDate] = new HashSet<string>();
+            }
+
+            dailyTasks[sessionDate].Add(color);
+        }
+
+        return dailyTasks;
+    }
+    
     public List<MonthlyTasksDTO> GetMontlyTasks(string userId)
     {
         List<WorkSession> workSessions = _taskRepository.GetMonthlyWorkSessions(userId, 6);

@@ -27,7 +27,7 @@ public class WebSocketService
         var connections = Rooms[roomId];
         foreach (var connection in connections)
         {
-            if (connection != sender) // Exclude the sender
+            if (connection != sender)
             {
                 connection.Send(message);
             }
@@ -75,7 +75,7 @@ public class WebSocketService
                 else
                     foreach (var client in _clients)
                     {
-                        if (client != socket) // Exclude the sender
+                        if (client != socket) 
                         {
                             client.Send(message);
                         }
@@ -94,7 +94,6 @@ public class WebSocketService
     
     public void StopWebSocketServer()
     {
-        //Console.WriteLine(_server.Port + "AAAAAAAAAAAAAAAAAAAAAAa");
         _server.Dispose(); // Stop the server and release resources
         _server = null; // Clear the reference to the server instance
         _clients.Clear(); // Clear the list of clients

@@ -58,6 +58,12 @@ public class TaskController : ControllerBase
         string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         return Ok(_taskService.GetWeeklyTasks(userId, fromDate));
     }
+    [HttpGet("yearly"), Authorize]
+    public ActionResult<Dictionary<DateTime, HashSet<string>>> GetPastYearTasks(int fromDate)
+    {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        return Ok(_taskService.GetPastYearTasks(userId));
+    }
     [HttpGet("monthly"), Authorize]
     public ActionResult<List<MonthlyTasksDTO>> GetMonthlyTasks()
     {
