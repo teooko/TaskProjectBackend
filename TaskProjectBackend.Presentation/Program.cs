@@ -57,7 +57,7 @@ builder.Services.AddScoped<TaskService>();
 builder.Services.AddScoped<WorkSessionService>();
 builder.Services.AddScoped<GroupSessionRepository>();
 builder.Services.AddScoped<GroupSessionService>();
-builder.Services.AddScoped<WebSocketService>();
+//builder.Services.AddScoped<WebSocketService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
