@@ -1,5 +1,10 @@
 .idea
 .vs
-/obj/
-/bin/Debug/net8.0/
-/bin/
+.\TaskProjectBackend.Presentation\obj
+.\TaskProjectBackend.Presentation\bin
+.\TaskProjectBackend.Application\obj
+.\TaskProjectBackend.Application\bin
+.\TaskProjectBackend.DataAccess\obj
+.\TaskProjectBackend.DataAccess\bin
+.\TaskProjectBackend.Domain\obj
+.\TaskProjectBackend.Domain\bin
