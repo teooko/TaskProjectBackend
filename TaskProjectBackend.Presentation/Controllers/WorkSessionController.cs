@@ -33,4 +33,10 @@ public class WorkSessionController : ControllerBase
         _workSessionService.Stop(id);
         return Ok("Work session stopped");
     }
+
+    [HttpPost]
+    public ActionResult<WorkSession> PostWorkSession(WorkSession workSession)
+    {
+        return _workSessionService.PostWorkSession(workSession);
+    }
 }

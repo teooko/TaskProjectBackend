@@ -62,4 +62,12 @@ public class WorkSessionRepository
         
         return workSessions;
     }
+
+    public WorkSession PostWorkSession(WorkSession workSession)
+    {
+        _context.Add(workSession);
+        _context.SaveChanges();
+
+        return _context.worksessions.Single(ws => ws == workSession);
+    }
 }

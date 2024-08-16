@@ -35,4 +35,9 @@ public class WorkSessionService
 
         return duration;
     }
+
+    public WorkSession PostWorkSession(WorkSession workSession)
+    {
+        return _workSessionRepository.PostWorkSession(workSession);
+    }
 }
