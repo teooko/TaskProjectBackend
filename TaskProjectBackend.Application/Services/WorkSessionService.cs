@@ -1,4 +1,5 @@
 ﻿using Domain;
+using TaskProjectBackend.Application.DTO;
 using TaskProjectBackend.DataAccess.Repositories;
 
 namespace TaskProjectBackend.Application.Services;
@@ -6,9 +7,10 @@ namespace TaskProjectBackend.Application.Services;
 public class WorkSessionService
 {
     private readonly WorkSessionRepository _workSessionRepository;
-
-    public WorkSessionService(WorkSessionRepository workSessionRepository)
+    private readonly TaskRepository _taskRepository;
+    public WorkSessionService(WorkSessionRepository workSessionRepository, TaskRepository taskRepository)
     {
+        _taskRepository = taskRepository;
         _workSessionRepository = workSessionRepository;
     }
 
@@ -36,8 +38,12 @@ public class WorkSessionService
         return duration;
     }
 
-    public WorkSession PostWorkSession(WorkSession workSession)
+    public WorkSession PostWorkSession(WorkSessionDTO workSessionDto)
     {
+        WorkSession workSession = new WorkSession();
+        workSession.Start = workSessionDto.Start;
+        workSession.End = workSessionDto.End;
+        workSession.Task = _taskRepository.Get(workSessionDto.TaskId);
         return _workSessionRepository.PostWorkSession(workSession);
     }
 }

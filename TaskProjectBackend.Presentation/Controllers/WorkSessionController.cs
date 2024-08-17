@@ -1,5 +1,8 @@
-﻿using Domain;
+﻿using System.Security.Claims;
+using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskProjectBackend.Application.DTO;
 using TaskProjectBackend.Application.Services;
 namespace API.Controllers;
 
@@ -34,9 +37,9 @@ public class WorkSessionController : ControllerBase
         return Ok("Work session stopped");
     }
 
-    [HttpPost]
-    public ActionResult<WorkSession> PostWorkSession(WorkSession workSession)
+    [HttpPost, Authorize]
+    public ActionResult<WorkSession> PostWorkSession(WorkSessionDTO workSessionDto)
     {
-        return _workSessionService.PostWorkSession(workSession);
+        return _workSessionService.PostWorkSession(workSessionDto);
     }
 }
