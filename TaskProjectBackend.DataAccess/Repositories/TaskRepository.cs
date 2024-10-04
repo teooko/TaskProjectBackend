@@ -1,4 +1,5 @@
-﻿using Microsoft.CodeAnalysis.Elfie.Serialization;
+﻿using System.Text.RegularExpressions;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -23,13 +24,25 @@ public class TaskRepository
         return _context.tasks.Where(t => t.UserId == userId).ToList();
     }
     
+    // Create separate file for this sort of functions
+    public static bool IsValidHexColor(string color)
+    {
+        string pattern = @"^#(?:[0-9a-fA-F]{3}){1,2}$";
+        return Regex.IsMatch(color, pattern);
+    }
     public Task Post(Task task)
     {
+        
         bool taskExists = _context.tasks.Any(t => t.Name == task.Name);
         
         if(taskExists)
         {
             throw new InvalidOperationException("Task already exists");
+        }
+
+        if (!IsValidHexColor(task.Color))
+        {
+            throw new InvalidOperationException("Invalid color");
         }
         _context.Add(task);
         _context.SaveChanges();
