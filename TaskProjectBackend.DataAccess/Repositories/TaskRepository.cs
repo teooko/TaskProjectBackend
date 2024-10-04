@@ -15,21 +15,26 @@ public class TaskRepository
     }
     public Task Get(int id)
     {
-        //using var context = new Context();
         return _context.tasks.Single(p => p.Id == id);
     }
 
     public List<Task> Get(string userId)
     {
-        //using var context = new Context();
         return _context.tasks.Where(t => t.UserId == userId).ToList();
     }
     
     public Task Post(Task task)
     {
-        _context.Add(task);
-        _context.SaveChanges();
-        return this.Get(task.Id);
+        bool taskExists = _context.tasks.Any(t => t.Name == task.Name);
+        
+        if(!taskExists)
+        {
+            _context.Add(task);
+            _context.SaveChanges();
+            return this.Get(task.Id);
+        }
+
+        return null;
     }
 
     public Task Delete(int id)

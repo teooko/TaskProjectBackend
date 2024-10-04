@@ -20,7 +20,12 @@ public class TaskController : ControllerBase
     {
         string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         task.UserId = userId;
-        return Ok(_taskService.Post(task));
+
+        var createdTask = _taskService.Post(task);
+        
+        if(createdTask != null)
+            return Ok(_taskService.Post(task));
+        return Conflict("The task already exists");
     }
     [HttpGet("{id}")]
     public ActionResult<Domain.Task> Get(int id)
