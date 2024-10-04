@@ -27,14 +27,13 @@ public class TaskRepository
     {
         bool taskExists = _context.tasks.Any(t => t.Name == task.Name);
         
-        if(!taskExists)
+        if(taskExists)
         {
-            _context.Add(task);
-            _context.SaveChanges();
-            return this.Get(task.Id);
+            throw new InvalidOperationException("Task already exists");
         }
-
-        return null;
+        _context.Add(task);
+        _context.SaveChanges();
+        return this.Get(task.Id);
     }
 
     public Task Delete(int id)
