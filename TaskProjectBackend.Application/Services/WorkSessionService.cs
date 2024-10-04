@@ -44,6 +44,7 @@ public class WorkSessionService
         workSession.Start = workSessionDto.Start;
         workSession.End = workSessionDto.End;
         workSession.Task = _taskRepository.Get(workSessionDto.TaskId);
+        
         return _workSessionRepository.PostWorkSession(workSession);
     }
 }
